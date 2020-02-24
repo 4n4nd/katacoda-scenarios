@@ -9,42 +9,16 @@ metadata:
   name: my-odh-cr
 spec:
   aicoe-jupyterhub:
-    # Deploy the ODH aicoe-jupyterhub role if True
-    odh_deploy: true
-    notebook_cpu: 1
-    notebook_memory: 2Gi
-    spark:
-      # Spark image to use in the cluster
-      worker:
-        # Number of spark worker nodes
-        instances: 1
-        # Amount of cpu & memory resources to allocate to the each worker node in the cluster.
-        resources:
-          limits:
-            memory: 1Gi
-            cpu: 1
-          requests:
-            memory: 1Gi
-            cpu: 500m
-      master:
-        # Number of spark master nodes
-        instances: 1
-        # Amount of cpu & memory resources to allocate to the each node in the cluster.
-        resources:
-          limits:
-            memory: 1Gi
-            cpu: 1
-          requests:
-            memory: 512Mi
-            cpu: 500m
+    odh_deploy: true #Setting this to true will deploy jupyterhub
+    deploy_all_notebooks: true
   spark-operator:
-    odh_deploy: false
+    odh_deploy: false #Setting this to true will deploy spark
   monitoring:
     enable_pushgateway: false
-    odh_deploy: true
+    odh_deploy: false #Setting this to true will deploy monitoring using Prometheus and Grafana
 </pre>
 
-Once we have enabled all the tools we need to be deployed in the above Custom Resource,
+Once we have enabled all the tools that we need to be deployed in the above Custom Resource,
 we will create it using the `oc` client.
 
 We can run the following command to do so:
