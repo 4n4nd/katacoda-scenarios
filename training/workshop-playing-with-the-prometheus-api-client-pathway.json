@@ -1,0 +1,13 @@
+{
+  "title": "Workshop Playing with the Prometheus API Client",
+  "description": "Playing with the Prometheus API Client",
+  "courses": [
+    {
+      "pathway_id": "4n4nd",
+      "title": "Playing with the Prometheus API Client",
+      "id": "prometheus-api-client",
+      "course_id": "prometheus-api-client",
+      "description": ""
+    }
+  ]
+}
