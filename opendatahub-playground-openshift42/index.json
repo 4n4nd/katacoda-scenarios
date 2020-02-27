@@ -1,10 +1,10 @@
 {
     "icon": "fa-openshift",
-    "title": "OpenDataHub Playground",
+    "title": "OpenDataHub Playground OpenShift 4.2",
     "description": "",
     "pathwayTitle": "OpenShift",
     "difficulty": "beginner",
-    "time": "25-30 minutes",
+    "time": "15-20 minutes",
     "backend": {
       "imageid": "openshift-4-2"
     },
