@@ -11,8 +11,11 @@
     },
     "environment": {
         "showdashboard": true,
-        "dashboard": "Dashboard",
-        "uilayout": "terminal",
+        "dashboards": [{"name": "Dashboard", "href": "https://[[HOST_SUBDOMAIN]]-8443-[[KATACODA_HOST]].environments.katacoda.com"},
+                       {"name": "Notebook", "href": "http://custom-notebook-myproject.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"},
+                       {"name": "Prometheus", "href": "http://prometheus-demo-route-myproject.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"}
+                      ],
+        "uilayout": "terminal-iframe",
         "hideintro": false,
         "hidefinish": false
     },

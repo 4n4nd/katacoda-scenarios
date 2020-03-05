@@ -12,6 +12,9 @@ curl https://raw.githubusercontent.com/jupyter-on-openshift/jupyter-notebooks/2.
 # set up Notebooks
 oc process notebook-builder -p GIT_REPOSITORY_URL=https://github.com/hemajv/prometheus-anomaly-detection-workshop.git -p CONTEXT_DIR=source/prometheus-api-client | oc apply -f - -n myproject
 oc process notebook-deployer -p NOTEBOOK_IMAGE=custom-notebook:latest -p NOTEBOOK_PASSWORD=secret | oc apply -f - -n myproject
+oc delete route custom-notebook -n myproject
+oc expose svc custom-notebook -n myproject
+#oc patch route custom-notebook -p '{"spec":{"tls":{"insecureEdgeTerminationPolicy": "Allow"}}}' -n myproject
 clear
 echo -e "Waiting for metrics data to be generated..."
 until [ "$(oc get job prometheus-generate-data -o jsonpath='{.status.succeeded}' -n myproject &)" = "1" ];
